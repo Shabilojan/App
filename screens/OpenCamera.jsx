@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Text, SafeAreaView, ScrollView, StyleSheet, Image, View, Platform } from 'react-native';
+import { Button, Text, SafeAreaView, ScrollView, StyleSheet, Image, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 
 export default function OpenCamera() {
@@ -8,7 +8,7 @@ export default function OpenCamera() {
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === 'granted');
     })();
   }, []);
@@ -22,6 +22,7 @@ export default function OpenCamera() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Image style={{ position: 'absolute', width: '100%', height: '100%' }} source={require('../assets/BG2.png')} />
       <ScrollView>
         <View style={styles.cameraContainer}>
           <Camera style={styles.camera} type={type}>
@@ -40,6 +41,9 @@ export default function OpenCamera() {
           </Camera>
         </View>
       </ScrollView>
+      <TouchableOpacity onPress={() => console.log('Camera button pressed')}>   
+        <View style={styles.cambtn}></View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -48,29 +52,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: Platform.OS === 'android' ? 40 : 0,
   },
   cameraContainer: {
     flex: 1,
     flexDirection: 'row',
-    width:340,
-    height:400,
-    alignSelf:'center',
-    marginTop:40,
+    alignSelf: 'center',
   },
   camera: {
-    
-    width:340,
-    height:400,
-    alignSelf:'center',
-    
-    
+    width: 340,
+    height: 410,
+    alignSelf: 'center',
+    marginTop: 200,
+    marginHorizontal:20,
   },
   buttonContainer: {
-   
-    alignSelf:'center',
-    backgroundColor: 'transparent',
+    alignSelf: 'center',
+    backgroundColor: '#fff',
     flexDirection: 'row',
-    margin: 20,
+    marginTop: 350,
   },
+  cambtn: {
+    marginBottom: 150,
+    width: 80,
+    height: 80,
+    borderRadius: 50, // Make it round
+    backgroundColor: 'white', // Example background color
+    alignSelf: 'center',
+  }
 });

@@ -13,7 +13,7 @@ const Tips = ({navigation}) => {
       <View style={styles.content}>
         <Text>Choose your language</Text>
         <View style={styles.buttonsContainer}>
-          <Button title="Tamil" color="#841584"  onPress={() => navigation.navigate(Tamil)} />
+          <Button title="Tamil" color="#841584"  onPress={() => navigation.navigate('Tamil')} />
           <View style={styles.buttonGap}></View>
           <Button title="Tamil" color="#841584"  onPress={() => navigation.navigate(English)} />
           <View style={styles.buttonGap}></View>
