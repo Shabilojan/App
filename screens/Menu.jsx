@@ -2,12 +2,12 @@ import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import Tips from './Tips';
 import Gallery from  './Gallery';
-import Camera from './Camera';
+import OpenCamera from './OpenCamera';
 
 const Menu = ({ navigation }) => {
   const handlePressCamera = () => {
     console.log('Camera clicked');
-    navigation.navigate(Camera);
+    navigation.navigate(OpenCamera);
 
   };
 
