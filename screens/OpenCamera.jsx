@@ -41,7 +41,7 @@ export default function OpenCamera() {
           </Camera>
         </View>
       </ScrollView>
-      <TouchableOpacity onPress={() => console.log('Camera button pressed')}>   
+      <TouchableOpacity onPress={() => console.log('Camera button pressed')}>
         <View style={styles.cambtn}></View>
       </TouchableOpacity>
     </SafeAreaView>
@@ -60,10 +60,9 @@ const styles = StyleSheet.create({
   },
   camera: {
     width: 340,
-    height: 410,
+    height: 450,
     alignSelf: 'center',
-    marginTop: 200,
-    marginHorizontal:20,
+    marginTop: 160,
   },
   buttonContainer: {
     alignSelf: 'center',
