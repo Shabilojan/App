@@ -8,7 +8,8 @@ import Menu from './screens/Menu';
 import Tips from './screens/Tips';
 import Tamil from './screens/Tamil';
 import Gallery from './screens/Gallery';
-import OpenCamera from './screens/OpenCamera'
+import OpenCamera from './screens/OpenCamera';
+import Scan from './screens/Scan';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,8 @@ const App = () => {
         <Stack.Screen name="Tamil" component={Tamil} options={{ headerShown: false }} />
         <Stack.Screen name="Gallery" component={Gallery} options={{ headerShown: false }} />
         <Stack.Screen name="OpenCamera" component={OpenCamera} options={{ headerShown: false }} />
+        <Stack.Screen name="Scan" component={Scan} options={{ headerShown: false }} />
+
       </Stack.Navigator>
     
     </NavigationContainer>

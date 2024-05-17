@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
     >
       <ImageBackground
         style={styles.overlayImage}
-        source={require('../assets/Overlay.png')}
+        source={require('../assets/Overlay.jpg')}
         imageStyle={{ opacity: 0.25 }}
       >
         <View style={styles.darkOverlay} />
